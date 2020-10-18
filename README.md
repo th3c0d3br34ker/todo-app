@@ -1,12 +1,24 @@
 # Todo App
 
-The user should be able to insert new task, mark a todo as complete, and delete a todo.
+## Features ✨
 
-Reference:
+✅ Insert New TASK.  
+✅ Mark a TASK as complete.  
+✅ Delete a TASK.
 
-1.  https://medium.com/js-geek/create-a-simple-todo-app-in-react-72d9341a7e6c
-2.  https://www.geeksforgeeks.org/how-to-create-todo-app-using-reactjs
-3.  https://www.youtube.com/watch?v=fTP2gi7e3k8
+## Implementation 👨‍💻
+
+✅ useState and useEffects Hooks.  
+✅ localStorage for persistent Data Storage.
+
+## Reference 📚
+
+Some source material used to learn while implementing
+
+⚫ https://medium.com/js-geek/create-a-simple-todo-app-in-react-72d9341a7e6c  
+⚫ https://www.geeksforgeeks.org/how-to-create-todo-app-using-reactjs  
+⚫ https://www.youtube.com/watch?v=fTP2gi7e3k8  
+⚫ https://github.com/danmostudco/ReactTransitionGroupExample
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

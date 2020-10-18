@@ -1,40 +1,8 @@
 import React, { useEffect, useState } from "react";
 
+import TodoBody from "./todoBody.jsx";
 import TodoForm from "./todoForm.jsx";
-import TodoItem from "./todoItem.jsx";
 import styled from "styled-components";
-
-const TodoBody = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-  // border: 2px solid green;
-  max-height: 400px;
-  min-height: 435px;
-  overflow: hidden;
-  overflow-y: scroll;
-
-  /* width */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #03045e;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #00b4d8;
-    border-radius: 8px;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-`;
 
 const TodoHeading = styled.h1`
   color: white;
@@ -104,47 +72,11 @@ export default function TodoApp() {
         </TodoHeading>
       </TodoHeadingWrapper>
       <TodoForm onSubmit={addTodo} />
-      <TodoBody>
-        {tasks.map((task, i) => (
-          <TodoItem
-            key={task.id}
-            id={task.id}
-            complete={task.complete}
-            toggleComplete={() => toggleComplete(task.id)}
-            text={task.text}
-            onDeleteTask={() => deleteTodo(task.id)}
-          />
-        ))}
-      </TodoBody>
+      <TodoBody
+        tasks={tasks}
+        toggleComplete={toggleComplete}
+        deleteTodo={deleteTodo}
+      />
     </TodoMain>
   );
 }
-
-// class TodoApp extends Component {
-//   state = {
-//     tasks: [],
-//     count: 0,
-//   };
-
-//   render() {
-//     return (
-//       <TodoMain>
-//         <TodoForm onSubmit={this.addTodo} />
-//         <TodoBody>
-//           {this.state.tasks.map((task, i) => (
-//             <TodoItem
-//               id={task.id}
-//               key={i}
-//               complete={task.complete}
-//               toggleComplete={() => this.toggleComplete(task.id)}
-//               text={task.text}
-//               onDeleteTask={() => this.deleteTodo(task.id)}
-//             />
-//           ))}
-//         </TodoBody>
-//       </TodoMain>
-//     );
-//   }
-// }
-
-// export default TodoApp;

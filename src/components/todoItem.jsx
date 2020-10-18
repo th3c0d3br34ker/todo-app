@@ -1,4 +1,5 @@
 import React from "react";
+import propTypes from "prop-types";
 import styled from "styled-components";
 
 const Item = styled.div`
@@ -36,6 +37,12 @@ const DeleteButton = styled.button`
   padding: 4px 8px;
   margin-right: 8px;
   box-shadow: 1px 1px 4px #fff;
+  transition: all 200ms ease;
+
+  &:hover {
+    background-color: #ff0000;
+    transform: translateY(2px);
+  }
 `;
 
 export default function TodoItem(props) {
@@ -62,3 +69,11 @@ export default function TodoItem(props) {
     </Item>
   );
 }
+
+TodoItem.propTypes = {
+  id: propTypes.number,
+  text: propTypes.string,
+  complete: propTypes.bool,
+  toggleComplete: propTypes.func,
+  onDeleteTask: propTypes.func,
+};

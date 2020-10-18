@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import propTypes from "prop-types";
 import styled from "styled-components";
 
 const StyledForm = styled.form`
@@ -26,6 +27,12 @@ const AddButton = styled.button`
   padding: 8px;
   outline: none;
   box-shadow: 2px 4px 2px #90e0f0;
+  transition: all 200ms ease;
+
+  &:hover {
+    background-color: #eee;
+    transform: translateY(2px);
+  }
 `;
 
 export default function TodoForm(props) {
@@ -65,24 +72,6 @@ export default function TodoForm(props) {
   );
 }
 
-// class TodoForm extends Component {
-//   state = {
-//     text: "",
-//   };
-
-//   render() {
-//     return (
-// <StyledForm onSubmit={this.handleSubmit}>
-//   <StyledInput
-//     name="text"
-//     placeholder="Enter Task"
-//     value={this.state.text}
-//     onChange={this.handleChange}
-//   />
-//   <AddButton onClick={this.handleSubmit}>ADD</AddButton>
-// </StyledForm>
-//     );
-//   }
-// }
-
-// export default TodoForm;
+TodoForm.propTypes = {
+  onSubmit: propTypes.func,
+};
